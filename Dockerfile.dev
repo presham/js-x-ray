@@ -1,0 +1,11 @@
+FROM node:24-bookworm
+
+WORKDIR /app
+
+COPY package*.json ./
+COPY workspaces/js-x-ray/package.json ./workspaces/js-x-ray/
+COPY workspaces/js-x-ray-ai/package.json ./workspaces/js-x-ray-ai/
+
+RUN npm install
+
+CMD [ "bash" ]
